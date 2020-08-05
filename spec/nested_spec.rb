@@ -5,8 +5,9 @@ describe "Working with Nested Hashes -" do
   describe "the hopper method" do
     it "operates on the programmer_hash and returns the value of the :grace_hopper key" do
       expect(hopper).to eq({:known_for => "COBOL", :languages => ["COBOL", "FORTRAN"]})
-
+      hopper[:grace_hopper] = "key"
     end
+    programmer_hash
   end
 
   describe "the alan_kay_is_known_for method" do
@@ -21,7 +22,7 @@ describe "Working with Nested Hashes -" do
     end
   end
 
-  describe "the adding_matz method" do 
+  describe "the adding_matz method" do
     it "operates on the programmer_hash and adds a key/value pair to the top level of the hash, returning the newly-added-to hash" do
       expect(adding_matz.keys).to include(:yukihiro_matsumoto)
     end
